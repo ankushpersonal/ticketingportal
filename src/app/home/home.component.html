@@ -1,0 +1,76 @@
+<!-- Details -->
+<div class="container justify-content-center">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col card mt-5 detail shadow">
+      <div class="mt-5">
+        <h3>Details</h3>
+      </div>
+      <form name="detailsForm" [formGroup]="detailsFormGroup">
+        <div class="form-row">
+          <!-- First name field -->
+          <div class="col-6">
+            <label for="firstname">First name</label>
+            <input type="text" name="detailsFirstName" class="form-control" placeholder="First name"
+              formControlName="detailsFirstName"
+              [ngClass]="{'is-invalid' : detailsFormGroup.get('detailsFirstName').touched &&  detailsFormGroup.get('detailsFirstName').invalid }">
+
+            <div class="invalid-feedback"
+              *ngIf="detailsFormGroup.get('detailsFirstName').touched &&  detailsFormGroup.get('detailsFirstName').invalid">
+              <div *ngIf="detailsFormGroup.get('detailsFirstName').errors.required">First Name is required</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <!-- Last name field  -->
+            <label for="lastname">Last name</label>
+            <input type="text" name="lastname" class="form-control" placeholder="Last name"
+              formControlName="detailsLastName"
+              [ngClass]="{'is-invalid' : detailsFormGroup.get('detailsLastName').touched &&  detailsFormGroup.get('detailsLastName').invalid }">
+            <div class="invalid-feedback"
+              *ngIf="detailsFormGroup.get('detailsLastName').touched &&  detailsFormGroup.get('detailsLastName').invalid">
+              <div *ngIf="detailsFormGroup.get('detailsLastName').errors.required">Last Name is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row mt-3">
+          <div class="col-12">
+            <!-- Email address field  -->
+            <label for="detailsEmail">Email address</label>
+            <input type="text" name="detailsEmail" class="form-control" placeholder="Email Address"
+              formControlName="detailsEmail"
+              [ngClass]="{'is-invalid' : detailsFormGroup.get('detailsEmail').touched &&  detailsFormGroup.get('detailsEmail').invalid }">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <div class="invalid-feedback"
+              *ngIf="detailsFormGroup.get('detailsEmail').touched && detailsFormGroup.get('detailsEmail').invalid">
+              <div *ngIf="detailsFormGroup.get('detailsEmail').errors.required">Email address is required</div>
+              <div *ngIf="detailsFormGroup.get('detailsEmail').errors.email">Invalid email address</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-row mt-3">
+          <div class="col-12">
+            <!-- Confirmation field -->
+            <label for="confirmationId">Confirmation ID</label>
+            <input type="text" name="confirmationId" class="form-control" placeholder="Confirmation ID"
+              formControlName="detailsConfirmation"
+              [ngClass]="{'is-invalid' : detailsFormGroup.get('detailsConfirmation').touched &&  detailsFormGroup.get('detailsConfirmation').invalid }">
+
+            <div class="invalid-feedback"
+              *ngIf="detailsFormGroup.get('detailsConfirmation').touched && detailsFormGroup.get('detailsConfirmation').invalid">
+              <div *ngIf="detailsFormGroup.get('detailsConfirmation').errors.required">Confirmation ID is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="my-3 ml-auto">
+          <button class="btn btn-primary" type="submit" (click)="submit()">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div class="col"></div>
+  </div>
+
+</div>

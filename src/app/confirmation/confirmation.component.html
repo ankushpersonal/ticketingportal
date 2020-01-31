@@ -1,0 +1,27 @@
+<div class="container mt-3">
+  <div class="card detail shadow">
+    <div class="card-header">
+      Confirmed
+    </div>
+    <div class="card-body">
+      
+      <h5 class="card-title">Tickets Confirmed</h5>
+
+      <div class="alert alert-success" *ngFor="let item of confirmedUsers">
+
+        <div class="row mt-2">
+          <div class="col-4"> Name : {{item.first_name}} {{item.last_name}} </div>
+          <div class="col-4"> Confirmation : {{item.confirmation_id}} </div>
+          <div class="col-4"> Flight Name : {{item.flight_name}} </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-4"> Seat : {{item.seat_number}} </div>
+          <div class="col-4"> From : {{item.from}} </div>
+          <div class="col-4"> To : {{item.to}} </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

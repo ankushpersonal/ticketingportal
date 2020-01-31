@@ -1,0 +1,20 @@
+<div class="container mt-3">
+    <div class="card detail shadow">
+        <div class="card-header">
+            Safety Instructions
+        </div>
+        <div class="card-body">
+            <div *ngFor="let item of instructions">
+                <h5 class="card-title">{{item.tip}}</h5>
+                <p class="card-text">{{item.instruction}}</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-3" *ngIf="instructions && instructions.length > 0">
+        <div class="col-12">
+        <button class="btn btn-primary" (click)="proceed()"> Proceed </button>
+    </div>
+    </div>
+</div>
