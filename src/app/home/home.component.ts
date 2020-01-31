@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
   }
 
   checkStatus(){
+    console.log('here')
     // get loggedinuser
     var traveller = this.travellers.filter(item => {
       if (item.last_name.toLowerCase() == this.detailsForm.lastName.toLowerCase() && item.confirmation_id == this.detailsForm.confirmation) {
@@ -55,7 +56,7 @@ export class HomeComponent implements OnInit {
       this.passengersData = passengers.filter(item => item.id != traveller[0].id).map(item => ({...item , isChecked : false}));
       localStorage.setItem('travellersData' , JSON.stringify(this.travellersData))
       localStorage.setItem('passengersData' , JSON.stringify(this.passengersData))
-      this.router.navigate(['/details']);
+      this.router.navigate(['details']);
     }
     else{
       this.toast.error('Please check the confirmation code and last name entered!!' ,  'Invalid' );
